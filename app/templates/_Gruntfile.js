@@ -45,14 +45,14 @@ module.exports = function (grunt) {
                 browser: true,<% } %><% if (jquery || testTask === 'qunit') { %>
                 globals: { jQuery: true },<% } %>
                 boss: true
-            },<% } %>
+            },
             gruntfile: {
                 src: 'gruntfile.js'
             },
             lib_test: {
                 src: ['<%= libDir %>/**/*.js', '<%= testDir %>/**/*.js']
             }
-        },<% if (dom) { %>
+        },<% } %><% if (dom) { %>
         <%= testTask %>: {
             files: ['<%= testDir %>/**/*.html']
         },<% } else { %>
